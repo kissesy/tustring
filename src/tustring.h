@@ -27,6 +27,7 @@ typedef struct tustring{
 	void (*add_tustring)(struct tustring*, char* );
 	ssize_t (*count)(struct tustring* ); 
 	char* (*get_tustring)(struct tustring* ); 
+	void (*delete_tustring)(struct tustring* );
 
 }tustring; 
 
@@ -36,6 +37,7 @@ ssize_t fp_get_index(struct tustring* this, char ch);
 void fp_add_tustring(struct tustring* this, char* str); 
 ssize_t fp_count(struct tustring* this); 
 char* fp_get_tustring(struct tustring* this); 
+void fp_delete_tustring(struct tustring* this);
 
 char* custom_strdup(char* s); 
 char* custom_strdup0(char* s, size_t n); 

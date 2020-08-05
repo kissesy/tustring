@@ -34,9 +34,18 @@ tustring* new_tustring(){
 	tustr->add_tustring = fp_add_tustring;
 	tustr->count = fp_count;
 	tustr->get_tustring = fp_get_tustring; 
+	tustr->delete_tustring = fp_delete_tustring;
 	return tustr; 
 }
 
+void fp_delete_tustring(struct tustring* this){
+	if(this->str == NULL) return; 
+	else{
+		free(this->str); 
+		this->str = NULL; 
+		this->len = 0; 
+	}
+}
 
 char* fp_get_tustring(struct tustring* this){
 	return this->str; 
